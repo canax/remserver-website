@@ -89,7 +89,7 @@ LOCAL_HTDOCS 	:= $(HTDOCS_BASE)/$(WWW_SITE)
 ROBOTSTXT	 	:= robots.txt
 
 # For publishing to the production server
-PRODUCTION_PUBLISH := ssh mos@$(WWW_SITE) -t "cd $(GIT_BASE) && git pull && composer install"
+PRODUCTION_PUBLISH := ssh mos@$(WWW_SITE) -t "cd $(GIT_BASE) && git pull && make update local-publish"
 
 # Certificates for https
 SSL_APACHE_CONF = /etc/letsencrypt/options-ssl-apache.conf
