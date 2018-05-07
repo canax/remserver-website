@@ -15,6 +15,7 @@ Table of content
     * [Install as an Anax module](#install-as-an-anax-module)
     * [Install on a production server using http](#install-on-a-production-server-using-http)
     * [Install on a production server using https](#install-on-a-production-server-using-https)
+    * [Update the production server](#update-the-production-server)
 * [How to use and documentation](#how-to-use-and-documentation)
 
 
@@ -34,7 +35,7 @@ Install essential tools.
 
 ```
 make install       # Everything, including devtools
-composer install   # Only needed PHp packages
+composer install   # Only essential PHP packages
 ```
 
 Point your web browser to `htdocs` and you should see the documentation.
@@ -116,6 +117,14 @@ make virtual-host-https   # Upgrade from http to https apache virtual host confi
 ```
 
 
+
+### Update the production server
+
+Whenever you make changes to the repo you can update the production server by committing and pushing your changes and then update the production server through the following command.
+
+```text
+make production-publish
+```
 
 
 How to use and documentation
