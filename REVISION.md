@@ -2,6 +2,13 @@ Revision history
 =================================
 
 
+v1.0.* (2018-05-07)
+---------------------------------
+
+* Enhance Makefile and README on how to setup a production server using Apache virtual host fot http and/or https.
+
+
+
 v1.0.0 (2018-04-26)
 ---------------------------------
 

@@ -74,6 +74,32 @@ BATS := $(BIN)/bats
 
 
 
+# --------------------------------------------------------------------------
+#
+# Specifics for website projects
+#
+WWW_SITE		:= rem.dbwebb.se
+WWW_LOCAL		:= local.$(WWW_SITE)
+SERVER_ADMIN 	:= mos@$(WWW_SITE)
+BASE_URL    	:= https://$(WWW_SITE)/
+
+GIT_BASE 		:= git/$(WWW_SITE)
+HTDOCS_BASE 	:= $(HOME)/htdocs
+LOCAL_HTDOCS 	:= $(HTDOCS_BASE)/$(WWW_SITE)
+ROBOTSTXT	 	:= robots.txt
+
+# For publishing to the production server
+PRODUCTION_PUBLISH := ssh mos@$(WWW_SITE) -t "cd $(GIT_BASE) && git pull && composer install"
+
+# Certificates for https
+SSL_APACHE_CONF = /etc/letsencrypt/options-ssl-apache.conf
+SSL_PEM_BASE 	= /etc/letsencrypt/live/$(WWW_SITE)
+
+# Publish
+EXCLUDE_ON_PUBLISH = --exclude old --exclude backup --exclude .git --exclude .solution --exclude .solutions --exclude error.log --exclude cache --exclude access.log --delete
+
+
+
 # target: prepare                 - Prepare for tests and build
 .PHONY:  prepare
 prepare:
@@ -149,7 +175,7 @@ install: prepare install-tools-php install-tools-bash
 update:
 	@$(call HELPTEXT,$@)
 	[ ! -d .git ] || git pull
-	composer update
+	composer install
 
 
 
@@ -442,3 +468,284 @@ cimage-config-create:
 	@$(call HELPTEXT,$@)
 	$(ECHO) "$$CIMAGE_CONFIG" | bash -c 'cat > htdocs/cimage/img_config.php'
 	cat htdocs/cimage/img_config.php
+
+
+
+# ------------------------------------------------------------------------
+#
+# Apache development and production server setup
+#
+
+# target: install-fresh           - Do a fresh installation of a new development and/or production server.
+.PHONY: install-fresh
+install-fresh: etc-hosts site-build local-publish virtual-host
+	@$(call HELPTEXT,$@)
+
+
+
+# target: etc-hosts               - Create a entry in the /etc/hosts for local access.
+.PHONY: etc-hosts
+etc-hosts:
+	@$(call HELPTEXT,$@)
+	$(ECHO) "127.0.0.1 $(WWW_LOCAL)" | sudo bash -c 'cat >> /etc/hosts'
+	@tail -1 /etc/hosts
+
+
+
+# target: site-build              - Create essential directories to run as local website.
+.PHONY: site-build
+site-build:
+	@$(call HELPTEXT,$@)
+	# Create the local htdocs directory
+	install -d $(LOCAL_HTDOCS)/log
+
+# Create and sync cache
+#bash -c "install -d -m 777 cache/{cimage,anax,forum,forum-files}"
+#rsync -av cache $(LOCAL_HTDOCS)
+
+# Copy from CImage
+#install -d htdocs/cimage
+#bash -c "rsync -av #vendor/mos/cimage/webroot/{img,imgd,imgf,imgp,imgs,check_system}.php #vendor/mos/cimage/icc htdocs/cimage"
+#rsync -av vendor/mos/cimage/webroot/img/ htdocs/img/cimage/
+
+
+
+# target: local-publish           - Publish website to local host.
+.PHONY: local-publish
+local-publish:
+	@$(call HELPTEXT,$@)
+	rsync -av $(EXCLUDE_ON_PUBLISH) config content htdocs vendor $(LOCAL_HTDOCS)
+
+	@# Enable robots if available
+	[ ! -f $(ROBOTSTXT) ] || cp $(ROBOTSTXT) "$(LOCAL_HTDOCS)/htdocs/robots.txt"
+
+
+
+# target: clean-cache-anax        - Clean the local anax cache directory.
+.PHONY: clean-cache-anax
+clean-cache-anax:
+	@$(call HELPTEXT,$@)
+	-rm -f cache/anax/*
+
+
+
+# target: local-cache-clear       - Clear the local htdocs cache.
+.PHONY: local-cache-clear
+local-cache-clear:
+	@$(call HELPTEXT,$@)
+	-sudo rm -f $(LOCAL_HTDOCS)/cache/anax/*
+
+
+
+# target: local-publish-clear     - Publish website to local host and clear the cache.
+.PHONY: local-publish-clear
+local-publish-clear: local-cache-clear local-publish
+	@$(call HELPTEXT,$@)
+
+
+
+# target: production-publish      - Publish latest to the production server.
+.PHONY: production-publish
+production-publish:
+	@$(call HELPTEXT,$@)
+	$(shell $PRODUCTION_PUBLISH)
+	#ssh -p 2222 mos@$(WWW_SITE) -t "cd $(GIT_BASE) && git pull && composer install"
+
+
+
+# target: ssl-cert-create    - One way to create the certificates.
+.PHONY: ssl-cert-create
+ssl-cert-create:
+	@$(call HELPTEXT,$@)
+	#cd $(HOME)/git/letsencrypt
+	#./letsencrypt-auto certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
+	sudo certbot certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
+
+
+
+# target: ssl-cert-update    - Update certificates with new expiray date.
+.PHONY: ssl-cert-renew
+ssl-cert-renew:
+	@$(call HELPTEXT,$@)
+	#cd $(HOME)/git/letsencrypt
+	#./letsencrypt-auto renew
+	sudo service apache2 stop
+	sudo certbot renew
+	sudo service apache2 start
+
+
+
+# target: virtual-host            - Create files for the virtual host http configuration.
+.PHONY: virtual-host
+
+define VIRTUAL_HOST_80
+Define site $(WWW_SITE)
+ServerAdmin $(SERVER_ADMIN)
+
+<VirtualHost *:80>
+	ServerName $${site}
+	ServerAlias local.$${site}
+	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
+	ServerSignature Off
+
+	Include $(HTDOCS_BASE)/$${site}/config/apache/env
+	Include $(HTDOCS_BASE)/$${site}/config/apache/redirect
+	Include $(HTDOCS_BASE)/$${site}/config/apache/rewrite
+
+	<Directory />
+		#FallbackResource /index.php (did not work as expected)
+
+		# Rewrite to frontcontroller
+		RewriteEngine on
+		RewriteCond %{REQUEST_FILENAME} !-f
+		RewriteCond %{REQUEST_FILENAME} !-d
+		RewriteRule .* index.php [NC,L]
+
+		Options Indexes FollowSymLinks
+		AllowOverride None
+		Require all granted
+		Order allow,deny
+		Allow from all
+		Deny from env=spambot
+	</Directory>
+
+	<FilesMatch "\.(jpe?g|png|gif|js|css|svg|ttf|otf|eot|woff|woff2|ico)$">
+		ExpiresActive On
+		ExpiresDefault "access plus 1 week"
+	</FilesMatch>
+
+	#LogLevel alert rewrite:trace6
+	# tail -f error.log | fgrep '[rewrite:'
+
+	ErrorLog  $(HTDOCS_BASE)/$${site}/error.log
+	CustomLog $(HTDOCS_BASE)/$${site}/access.log combined
+</VirtualHost>
+endef
+export VIRTUAL_HOST_80
+
+define VIRTUAL_HOST_80_WWW
+Define site $(WWW_SITE)
+ServerAdmin $(SERVER_ADMIN)
+
+<VirtualHost *:80>
+	ServerName www.$${site}
+	Redirect "/" "http://$${site}/"
+</VirtualHost>
+endef
+export VIRTUAL_HOST_80_WWW
+
+virtual-host:
+	@$(call HELPTEXT,$@)
+	install -d $(LOCAL_HTDOCS)/htdocs
+	$(ECHO) "$$VIRTUAL_HOST_80" | sudo bash -c 'cat > /etc/apache2/sites-available/$(WWW_SITE).conf'
+	$(ECHO) "$$VIRTUAL_HOST_80_WWW" | sudo bash -c 'cat > /etc/apache2/sites-available/www.$(WWW_SITE).conf'
+	sudo a2ensite $(WWW_SITE) www.$(WWW_SITE)
+	sudo a2enmod rewrite expires setenvif # cgi
+	sudo apachectl configtest
+	sudo service apache2 reload
+
+
+
+# target: virtual-host-echo       - Echo virtual host configuration for http.
+virtual-host-echo:
+	@$(call HELPTEXT,$@)
+	@$(ECHO) "$$VIRTUAL_HOST_80"
+	#$(ECHO) "$$VIRTUAL_HOST_80_WWW"
+
+
+
+# target: virtual-host-https      - Create entries for the virtual host https.
+.PHONY: virtual-host-https
+
+define VIRTUAL_HOST_443
+Define site $(WWW_SITE)
+ServerAdmin $(SERVER_ADMIN)
+
+<VirtualHost *:80>
+	ServerName $${site}
+	ServerAlias do1.$${site}
+	ServerAlias do2.$${site}
+	ServerAlias bth1.$${site}
+	Redirect "/" "https://$${site}/"
+</VirtualHost>
+
+<VirtualHost *:443>
+	Include $(SSL_APACHE_CONF)
+	SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
+	SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
+	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
+
+	ServerName $${site}
+	ServerAlias do1.$${site}
+	ServerAlias do2.$${site}
+	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
+	ServerSignature Off
+
+	Include $(HTDOCS_BASE)/$${site}/config/apache-env
+	Include $(HTDOCS_BASE)/$${site}/config/apache-redirects
+	Include $(HTDOCS_BASE)/$${site}/config/apache-rewrites
+
+	<Directory />
+
+		#FallbackResource /index.php
+
+		# Rewrite to frontcontroller
+		RewriteEngine on
+		RewriteCond %{REQUEST_FILENAME} !-f
+		RewriteCond %{REQUEST_FILENAME} !-d
+		RewriteRule .* index.php [NC,L]
+
+		Options Indexes FollowSymLinks
+		AllowOverride None
+		Require all granted
+		Order allow,deny
+		Allow from all
+		Deny from env=spambot
+
+		Options +ExecCGI
+		AddHandler cgi-script .cgi
+
+	</Directory>
+
+	<FilesMatch "\.(jpe?g|png|gif|js|css|svg|ttf|otf|eot|woff|woff2|ico)$">
+		ExpiresActive On
+		ExpiresDefault "access plus 1 week"
+	</FilesMatch>
+
+	#LogLevel alert rewrite:trace6
+	# tail -f error.log | fgrep '[rewrite:'
+
+	ErrorLog  $(HTDOCS_BASE)/$${site}/log/error.log
+	CustomLog $(HTDOCS_BASE)/$${site}/log/access.log combined
+</VirtualHost>
+endef
+export VIRTUAL_HOST_443
+
+define VIRTUAL_HOST_443_WWW
+Define site $(WWW_SITE)
+ServerAdmin $(SERVER_ADMIN)
+
+<VirtualHost *:80>
+	ServerName www.$${site}
+	Redirect "/" "https://www.$${site}/"
+</VirtualHost>
+
+<VirtualHost *:443>
+	Include $(SSL_APACHE_CONF)
+	SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
+	SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
+	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
+
+	ServerName www.$${site}
+	Redirect "/" "https://$${site}/"
+</VirtualHost>
+endef
+export VIRTUAL_HOST_443_WWW
+
+virtual-host-https:
+	@$(call HELPTEXT,$@)
+	$(ECHO) "$$VIRTUAL_HOST_443" | sudo bash -c 'cat > /etc/apache2/sites-available/$(WWW_SITE).conf'
+	$(ECHO) "$$VIRTUAL_HOST_443_WWW" | sudo bash -c 'cat > /etc/apache2/sites-available/www.$(WWW_SITE).conf'
+	sudo a2enmod ssl
+	sudo apachectl configtest
+	sudo service apache2 reload

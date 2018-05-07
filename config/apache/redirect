@@ -1,0 +1,17 @@
+# Error documents
+#ErrorDocument 403 /error/403.php
+#ErrorDocument 404 /error/404.php
+#ErrorDocument 410 /error/410.php
+
+# Removed old content
+#Redirect 410 /doc
+
+# Avoid double linking
+#Redirect 301 /example	/kod-exempel
+
+# Moved content
+#Redirect 301 /some     /another
+#Redirect 301 /skalle    https://arkiv.dbwebb.se/skalle/
+
+# Plain redirect
+#Redirect /some /another
