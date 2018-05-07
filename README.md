@@ -1,7 +1,7 @@
 REM server with Anax included
 ==================================
 
-This is an complete bundle of the Anax module REM server [canax/remserver](https://github.com/canax/remserver) together with an Anax website. It can be used to quickly start up a standalone REM server for test and development.
+This is a complete bundle of the Anax module REM server [canax/remserver](https://github.com/canax/remserver) together with an Anax website. It can be used to quickly start up a standalone REM server for test and development.
 
 
 
@@ -109,6 +109,11 @@ make local-publish   # Publish website to local host.
 ### Install on a production server using https
 
 Perform the steps above to "[Install on a production server using http](#install-on-a-production-server-using-http)".
+
+```text
+make virtual-host-https   # Upgrade from http to https apache virtual host config files.
+make ssl-cert-create      # Create the HTTPS certificates.
+```
 
 
 
