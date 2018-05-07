@@ -548,8 +548,7 @@ local-publish-clear: local-cache-clear local-publish
 .PHONY: production-publish
 production-publish:
 	@$(call HELPTEXT,$@)
-	$(shell $PRODUCTION_PUBLISH)
-	#ssh -p 2222 mos@$(WWW_SITE) -t "cd $(GIT_BASE) && git pull && composer install"
+	$(shell $(PRODUCTION_PUBLISH))
 
 
 
