@@ -132,7 +132,7 @@ make virtual-host-https   # Upgrade from http to https apache virtual host confi
 Whenever you make changes to the repo you can update the production server by committing and pushing your changes and then update the production server through the following command.
 
 ```text
-make production-publish
+make production-publish   # Publish latest to the production server.
 ```
 
 
