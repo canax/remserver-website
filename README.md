@@ -8,6 +8,7 @@ This is a complete bundle of the Anax module REM server [canax/remserver](https:
 Table of content
 ----------------------------------
 
+* [How to use and documentation](#how-to-use-and-documentation)
 * [Install](#install)
     * [Install from Git repo](#install-from-git-repo)
     * [Run Git repo within Docker](#run-git-repo-within-docker)
@@ -16,7 +17,15 @@ Table of content
     * [Install on a production server using http](#install-on-a-production-server-using-http)
     * [Install on a production server using https](#install-on-a-production-server-using-https)
     * [Update the production server](#update-the-production-server)
-* [How to use and documentation](#how-to-use-and-documentation)
+
+
+
+How to use and documentation
+----------------------------------
+
+The starting page contains the documentation on the REM server API and how to use it.
+
+You can read the documentation on the [sample installation site](https://rem.dbwebb.se) or unstyled through this Git repo in [`content/index.md`](content/index.md).
 
 
 
@@ -125,15 +134,6 @@ Whenever you make changes to the repo you can update the production server by co
 ```text
 make production-publish
 ```
-
-
-How to use and documentation
-----------------------------------
-
-The starting page contains the documentation on how to use it.
-
-You can read the documentation on the [sample installation site](https://rem.dbwebb.se) or unstyled through this Git repo in [`content/index.md`](content/index.md).
-
 
 
 ```
