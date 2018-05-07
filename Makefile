@@ -88,9 +88,6 @@ HTDOCS_BASE 	:= $(HOME)/htdocs
 LOCAL_HTDOCS 	:= $(HTDOCS_BASE)/$(WWW_SITE)
 ROBOTSTXT	 	:= robots.txt
 
-# For publishing to the production server
-PRODUCTION_PUBLISH := ssh mos@$(WWW_SITE) -t "cd $(GIT_BASE) && git pull && make update local-publish"
-
 # Certificates for https
 SSL_APACHE_CONF = /etc/letsencrypt/options-ssl-apache.conf
 SSL_PEM_BASE 	= /etc/letsencrypt/live/$(WWW_SITE)
@@ -548,7 +545,6 @@ local-publish-clear: local-cache-clear local-publish
 .PHONY: production-publish
 production-publish:
 	@$(call HELPTEXT,$@)
-	#$(shell $(PRODUCTION_PUBLISH))
 	ssh $(SERVER_ADMIN) -t "cd $(GIT_BASE) && git pull && make update local-publish"
 
 
@@ -556,7 +552,9 @@ production-publish:
 .PHONY: ssl-cert-create
 ssl-cert-create:
 	@$(call HELPTEXT,$@)
+	sudo service apache2 stop
 	sudo certbot certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
+	sudo service apache2 start
 
 
 

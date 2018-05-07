@@ -111,8 +111,8 @@ make local-publish   # Publish website to local host.
 Perform the steps above to "[Install on a production server using http](#install-on-a-production-server-using-http)".
 
 ```text
-make virtual-host-https   # Upgrade from http to https apache virtual host config files.
 make ssl-cert-create      # Create the HTTPS certificates.
+make virtual-host-https   # Upgrade from http to https apache virtual host config files.
 ```
 
 
