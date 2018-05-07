@@ -548,8 +548,8 @@ local-publish-clear: local-cache-clear local-publish
 .PHONY: production-publish
 production-publish:
 	@$(call HELPTEXT,$@)
-	$(shell $(PRODUCTION_PUBLISH))
-
+	#$(shell $(PRODUCTION_PUBLISH))
+	ssh $(SERVER_ADMIN) -t "cd $(GIT_BASE) && git pull && make update local-publish"
 
 
 # target: ssl-cert-create         - Create the HTTPS certificates.
