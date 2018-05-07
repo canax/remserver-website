@@ -14,8 +14,7 @@ Table of content
     * [Run using Docker image](#run-using-docker-image)
     * [Install as an Anax module](#install-as-an-anax-module)
     * [Install on a production server using http](#install-on-a-production-server-using-http)
-    * [Install on a production server using http](#install-on-a-production-server-using-http)
-
+    * [Install on a production server using https](#install-on-a-production-server-using-https)
 * [How to use and documentation](#how-to-use-and-documentation)
 
 
@@ -34,7 +33,8 @@ Download this Git repo.
 Install essential tools.
 
 ```
-make install
+make install       # Everything, including devtools
+composer install   # Only needed PHp packages
 ```
 
 Point your web browser to `htdocs` and you should see the documentation.
@@ -98,7 +98,7 @@ make virtual-host    # Create files for the virtual host http configuration.
 
 Once these steps are performed one can view the development/production server on the local host using http://local.rem.dbwebb.se/ where "rem.dbwebb.se" is the hostname configured in the Makefile.
 
-When you change files you need to update the local installation.
+Update the local installation when you update the files in the repo.
 
 ```text
 make local-publish   # Publish website to local host.
