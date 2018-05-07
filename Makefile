@@ -585,6 +585,7 @@ ServerAdmin $(SERVER_ADMIN)
 <VirtualHost *:80>
 	ServerName $${site}
 	ServerAlias local.$${site}
+	ServerAlias do3.$${site}
 	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
 	ServerSignature Off
 
