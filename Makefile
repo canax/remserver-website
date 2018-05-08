@@ -163,6 +163,7 @@ build: test doc #theme less-compile less-minify js-minify
 .PHONY:  install
 install: prepare install-production install-tools-php install-tools-bash
 	@$(call HELPTEXT,$@)
+	[ ! -f composer.json ] || composer install
 
 
 
@@ -170,7 +171,7 @@ install: prepare install-production install-tools-php install-tools-bash
 .PHONY:  install-production
 install-production: 
 	@$(call HELPTEXT,$@)
-	[ ! -f composer.json ] || composer install
+	[ ! -f composer.json ] || composer --no-dev install
 
 
 
