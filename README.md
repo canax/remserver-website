@@ -1,6 +1,8 @@
 REM server with Anax included
 ==================================
 
+[![Join the chat at https://gitter.im/canax/remserver-website](https://badges.gitter.im/canax/remserver-website.svg)](https://gitter.im/canax/remserver-website?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is a complete bundle of the Anax module REM server [canax/remserver](https://github.com/canax/remserver) together with an Anax website. It can be used to quickly start up a standalone REM server for test and development.
 
 The REM server provides a dummy REST API with dynamic content, useful for developing and testing REST applications.
