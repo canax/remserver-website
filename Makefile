@@ -89,7 +89,6 @@ LOCAL_HTDOCS 	:= $(HTDOCS_BASE)/$(WWW_SITE)
 ROBOTSTXT	 	:= robots.txt
 
 # Certificates for https
-SSL_APACHE_CONF = /etc/letsencrypt/options-ssl-apache.conf
 SSL_PEM_BASE 	= /etc/letsencrypt/live/$(WWW_SITE)
 
 # Publish
@@ -582,9 +581,9 @@ ServerAdmin $(SERVER_ADMIN)
 	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
 	ServerSignature Off
 
-	Include $(HTDOCS_BASE)/$${site}/config/apache/env
-	Include $(HTDOCS_BASE)/$${site}/config/apache/redirect
-	Include $(HTDOCS_BASE)/$${site}/config/apache/rewrite
+	Include $(HTDOCS_BASE)/$${site}/config/apache/env.conf
+	Include $(HTDOCS_BASE)/$${site}/config/apache/redirect.conf
+	Include $(HTDOCS_BASE)/$${site}/config/apache/rewrite.conf
 
 	<Directory />
 		#FallbackResource /index.php (did not work as expected)
@@ -611,8 +610,8 @@ ServerAdmin $(SERVER_ADMIN)
 	#LogLevel alert rewrite:trace6
 	# tail -f error.log | fgrep '[rewrite:'
 
-	ErrorLog  $(HTDOCS_BASE)/$${site}/error.log
-	CustomLog $(HTDOCS_BASE)/$${site}/access.log combined
+	ErrorLog  $(HTDOCS_BASE)/$${site}/log/error.log
+	CustomLog $(HTDOCS_BASE)/$${site}/log/access.log combined
 </VirtualHost>
 endef
 export VIRTUAL_HOST_80
@@ -657,14 +656,12 @@ ServerAdmin $(SERVER_ADMIN)
 
 <VirtualHost *:80>
 	ServerName $${site}
-	ServerAlias do1.$${site}
-	ServerAlias do2.$${site}
-	ServerAlias bth1.$${site}
+	ServerAlias do3.$${site}
 	Redirect "/" "https://$${site}/"
 </VirtualHost>
 
 <VirtualHost *:443>
-	Include $(SSL_APACHE_CONF)
+	Include $(HTDOCS_BASE)/$${site}/config/apache/ssl.conf
 	SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
 	SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
 	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
@@ -675,13 +672,12 @@ ServerAdmin $(SERVER_ADMIN)
 	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
 	ServerSignature Off
 
-	Include $(HTDOCS_BASE)/$${site}/config/apache-env
-	Include $(HTDOCS_BASE)/$${site}/config/apache-redirects
-	Include $(HTDOCS_BASE)/$${site}/config/apache-rewrites
+	Include $(HTDOCS_BASE)/$${site}/config/apache/env.conf
+	Include $(HTDOCS_BASE)/$${site}/config/apache/redirect.conf
+	Include $(HTDOCS_BASE)/$${site}/config/apache/rewrite.conf
 
 	<Directory />
-
-		#FallbackResource /index.php
+		#FallbackResource /index.php (did not work as expected)
 
 		# Rewrite to frontcontroller
 		RewriteEngine on
