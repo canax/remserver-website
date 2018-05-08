@@ -126,7 +126,7 @@ clean-cache:
 .PHONY:  clean-all
 clean-all: clean clean-cache
 	@$(call HELPTEXT,$@)
-	rm -rf .bin vendor composer.lock
+	rm -rf .bin vendor
 
 
 
@@ -161,8 +161,16 @@ build: test doc #theme less-compile less-minify js-minify
 
 # target: install                 - Install all tools
 .PHONY:  install
-install: prepare install-tools-php install-tools-bash
+install: prepare install-production install-tools-php install-tools-bash
 	@$(call HELPTEXT,$@)
+
+
+
+# target: install-production      - Install tools needed for production
+.PHONY:  install-production
+install-production: 
+	@$(call HELPTEXT,$@)
+	[ ! -f composer.json ] || composer install
 
 
 
@@ -282,8 +290,6 @@ install-tools-php:
 				: '6'\
 		);" \
 		).phar && chmod 755 $(PHPUNIT)
-
-	[ ! -f composer.json ] || composer install
 
 
 

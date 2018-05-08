@@ -6,6 +6,7 @@ v1.0.* (2018-05-08)
 ---------------------------------
 
 * Update README with link to docker image.
+* Add make install-production to limit size of Docker container.
 
 
 

@@ -85,6 +85,8 @@ If you have downloaded this repo you can start it with `docker-compose`. It will
 docker-compose up remserver
 ```
 
+Point your web browser to `http://localhost:10099` and you should see the documentation.
+
 You can start it anywhere you have access to `docker`. Run like this and map the container port 80 to the local host port 10099.
 
 ```
