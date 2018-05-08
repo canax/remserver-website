@@ -2,6 +2,14 @@ Revision history
 =================================
 
 
+
+v1.0.* (2018-05-08)
+---------------------------------
+
+* Remove development files .phpcs.xml .phpdoc.xml .phpmd.xml .phpunit.xml.
+
+
+
 v1.0.2 (2018-05-08)
 ---------------------------------
 
