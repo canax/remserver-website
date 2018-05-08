@@ -9,6 +9,7 @@ Table of content
 ----------------------------------
 
 * [How to use and documentation](#how-to-use-and-documentation)
+* [Live REM server](#live-rem-server)
 * [Install](#install)
     * [Install from Git repo](#install-from-git-repo)
     * [Run Git repo within Docker](#run-git-repo-within-docker)
@@ -26,6 +27,13 @@ How to use and documentation
 The starting page contains the documentation on the REM server API and how to use it.
 
 You can read the documentation on the [sample installation site](https://rem.dbwebb.se) or unstyled through this Git repo in [`content/index.md`](content/index.md).
+
+
+
+Live REM server
+----------------------------------
+
+Try the live service at [rem.dbwebb.se](https://rem.dbwebb.se).
 
 
 
@@ -123,6 +131,12 @@ Perform the steps above to "[Install on a production server using http](#install
 ```text
 make ssl-cert-create      # Create the HTTPS certificates.
 make virtual-host-https   # Upgrade from http to https apache virtual host config files.
+```
+
+You can always revert to HTTP, If you get in trouble with the HTTPS/SSL configuration.
+
+```text
+make virtual-host    # Create files for the virtual host http configuration.
 ```
 
 

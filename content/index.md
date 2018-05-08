@@ -174,3 +174,5 @@ Source {#source}
 -------------------------------------------
 
 The source for the actual REM server is an Anax module [canax/remserver](https://github.com/canax/remserver).
+
+The source for the website rem.dbwebb.se is available in [GitHub canax/remserver-website](https://github.com/canax/remserver-website).
