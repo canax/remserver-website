@@ -1,7 +1,7 @@
 REM server with Anax included
 ==================================
 
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/canax/remserver-website)
+[![GitHub release](https://img.shields.io/github/release/canax/remserver-website.svg)](https://github.com/canax/remserver-website)
 
 This is a complete bundle of the Anax module REM server [canax/remserver](https://github.com/canax/remserver) together with an Anax website. It can be used to quickly start up a standalone REM server for test and development.
 
