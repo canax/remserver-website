@@ -7,6 +7,7 @@ v1.0.* (2018-05-08)
 ---------------------------------
 
 * Remove development files .phpcs.xml .phpdoc.xml .phpmd.xml .phpunit.xml.
+* Add Gitter badge/channel.
 
 
 
