@@ -662,8 +662,8 @@ ServerAdmin $(SERVER_ADMIN)
 
 <VirtualHost *:443>
 	Include $(HTDOCS_BASE)/$${site}/config/apache/ssl.conf
-	SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
-	SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
+	SSLCertificateFile      $(SSL_PEM_BASE)/cert.pem
+	SSLCertificateKeyFile   $(SSL_PEM_BASE)/privkey.pem
 	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
 
 	ServerName $${site}
@@ -721,9 +721,9 @@ ServerAdmin $(SERVER_ADMIN)
 </VirtualHost>
 
 <VirtualHost *:443>
-	Include $(SSL_APACHE_CONF)
-	SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
-	SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
+	Include $(HTDOCS_BASE)/$${site}/config/apache/ssl.conf
+	SSLCertificateFile      $(SSL_PEM_BASE)/cert.pem
+	SSLCertificateKeyFile   $(SSL_PEM_BASE)/privkey.pem
 	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
 
 	ServerName www.$${site}
