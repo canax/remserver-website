@@ -8,8 +8,8 @@ This is a complete bundle of the Anax module REM server [canax/remserver](https:
 Table of content
 ----------------------------------
 
-* [How to use and documentation](#how-to-use-and-documentation)
 * [Live REM server](#live-rem-server)
+* [How to use and documentation](#how-to-use-and-documentation)
 * [Install](#install)
     * [Install from Git repo](#install-from-git-repo)
     * [Run Git repo within Docker](#run-git-repo-within-docker)
@@ -21,19 +21,19 @@ Table of content
 
 
 
+Live REM server
+----------------------------------
+
+Try the live service at [rem.dbwebb.se](https://rem.dbwebb.se).
+
+
+
 How to use and documentation
 ----------------------------------
 
 The starting page contains the documentation on the REM server API and how to use it.
 
 You can read the documentation on the [sample installation site](https://rem.dbwebb.se) or unstyled through this Git repo in [`content/index.md`](content/index.md).
-
-
-
-Live REM server
-----------------------------------
-
-Try the live service at [rem.dbwebb.se](https://rem.dbwebb.se).
 
 
 
