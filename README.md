@@ -101,6 +101,8 @@ Read more on the module [canax/remserver](https://github.com/canax/remserver).
 
 ### Install on a production server using http
 
+These are useful for development and hosting a production server.
+
 This implies setting up its own Apache virtual host to run the website. The Git repo is used as source but copied to the production site, normally on the same machine on `$HOME/htdocs/server-name/`.
 
 First, perform the same steps as in [Install from Git repo](#install-from-git-repo).
