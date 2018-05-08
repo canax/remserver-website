@@ -53,8 +53,8 @@ Download this Git repo.
 Install essential tools.
 
 ```
-make install       # Everything, including devtools
-composer install   # Only essential PHP packages
+make install             # Everything, including devtools
+make install-production  # Only essentials for production environment
 ```
 
 Point your web browser to `htdocs` and you should see the documentation.
