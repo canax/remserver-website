@@ -13,7 +13,6 @@
         "anax/textfilter": "^1.0",
         "anax/url": "^1.0",
         "anax/view": "^1.0",
-        "mos/cimage": "^0.7.20",
         "symfony/yaml": "^3.3",
         "anax/remserver": "^1.1"
     },
