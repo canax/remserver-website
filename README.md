@@ -75,7 +75,7 @@ Point your web browser to `http://localhost:10099/htdocs` and you should see the
 
 ### Run using Docker image
 
-There is a Docker image that has the REM server website installed and ready to run.
+There is a [Docker image `anax/dev:remserver`](https://store.docker.com/community/images/anax/dev) that has the REM server website installed and ready to run.
 
 If you have downloaded this repo you can start it with `docker-compose`. It will use the setup you have in [`docker-compose.yml`](docker-compose.yml).
 
@@ -83,10 +83,10 @@ If you have downloaded this repo you can start it with `docker-compose`. It will
 docker-compose up remserver
 ```
 
-You can start it anywhere you have access to `docker`. Run like this and map the container port 80 to the local host port 10999.
+You can start it anywhere you have access to `docker`. Run like this and map the container port 80 to the local host port 10099.
 
 ```
-docker run -p 10999:80 anax/dev:remserver
+docker run -p 10099:80 anax/dev:remserver
 ```
 
 
