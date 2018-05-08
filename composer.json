@@ -1,19 +1,21 @@
 {
-    "name" : "anax/noname",
-    "description": "Anax scaffolding website for development",
+    "name" : "anax/remserver-website",
+    "description": "Anax website including Anax module for REM server.",
+    "homepage": "https://github.com/canax/remserver-website",
     "license": "MIT",
+    "keywords": ["Anax", "Anax module", "REM", "REST", "API"],
+    "authors": [
+        {
+            "name": "Mikael Roos",
+            "email": "mos@dbwebb.se"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/canax/remserver-website/issues",
+        "source": "https://github.com/canax/remserver-website"
+    },
     "require": {
-        "anax/common": "^1.0",
-        "anax/configure": "^1.0",
-        "anax/page": "^1.0",
-        "anax/response": "^1.0",
-        "anax/request": "^1.0",
-        "anax/router": "^1.0",
-        "anax/session": "^1.0",
-        "anax/textfilter": "^1.0",
-        "anax/url": "^1.0",
-        "anax/view": "^1.0",
-        "symfony/yaml": "^3.3",
+        "anax/anax": "^1.0",
         "anax/remserver": "^1.1"
     },
     "autoload": {

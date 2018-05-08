@@ -4,8 +4,103 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9241c006e0229f27f115236eb08264d3",
+    "content-hash": "8af11c83dfdc1d37ce66607155d0a278",
     "packages": [
+        {
+            "name": "anax/anax",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/anax.git",
+                "reference": "d6a122fac632456ee650ca3ed755d71b0dbca61e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/anax/zipball/d6a122fac632456ee650ca3ed755d71b0dbca61e",
+                "reference": "d6a122fac632456ee650ca3ed755d71b0dbca61e",
+                "shasum": ""
+            },
+            "require": {
+                "anax/anax-lite": "^1.0",
+                "anax/page": "^1.0",
+                "anax/textfilter": "^1.0",
+                "php": "^7.2",
+                "symfony/yaml": "^3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "The Anax framework.",
+            "homepage": "https://github.com/canax/anax",
+            "keywords": [
+                "anax",
+                "framework"
+            ],
+            "time": "2018-05-08T12:10:25+00:00"
+        },
+        {
+            "name": "anax/anax-lite",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/anax-lite.git",
+                "reference": "de386bb8f6d556066a35ec5d4791a966f0bed818"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/anax-lite/zipball/de386bb8f6d556066a35ec5d4791a966f0bed818",
+                "reference": "de386bb8f6d556066a35ec5d4791a966f0bed818",
+                "shasum": ""
+            },
+            "require": {
+                "anax/common": "^1.0",
+                "anax/configure": "^1.0",
+                "anax/request": "^1.0",
+                "anax/response": "^1.0",
+                "anax/router": "^1.0",
+                "anax/session": "^1.0",
+                "anax/url": "^1.0",
+                "anax/view": "^1.0",
+                "php": "^7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "The Anax (micro) framework, a customised release with only the bare essentials.",
+            "homepage": "https://github.com/canax/anax-lite",
+            "keywords": [
+                "anax",
+                "framework",
+                "micro framework"
+            ],
+            "time": "2018-05-08T12:10:16+00:00"
+        },
         {
             "name": "anax/common",
             "version": "v1.0.20",
