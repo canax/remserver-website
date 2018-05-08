@@ -8,24 +8,24 @@
     "packages": [
         {
             "name": "anax/anax",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/anax.git",
-                "reference": "d6a122fac632456ee650ca3ed755d71b0dbca61e"
+                "reference": "ac16c6adbf6507deb687b3d5287dc124c748c2ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/anax/zipball/d6a122fac632456ee650ca3ed755d71b0dbca61e",
-                "reference": "d6a122fac632456ee650ca3ed755d71b0dbca61e",
+                "url": "https://api.github.com/repos/canax/anax/zipball/ac16c6adbf6507deb687b3d5287dc124c748c2ec",
+                "reference": "ac16c6adbf6507deb687b3d5287dc124c748c2ec",
                 "shasum": ""
             },
             "require": {
-                "anax/anax-lite": "^1.0",
-                "anax/page": "^1.0",
-                "anax/textfilter": "^1.0",
+                "anax/anax-lite": "^1.0.0",
+                "anax/page": "^1.1.0",
+                "anax/textfilter": "^1.0.0",
                 "php": "^7.2",
-                "symfony/yaml": "^3.3"
+                "symfony/yaml": "^3.4.0"
             },
             "type": "library",
             "autoload": {
@@ -49,31 +49,31 @@
                 "anax",
                 "framework"
             ],
-            "time": "2018-05-08T12:10:25+00:00"
+            "time": "2018-05-08T13:21:16+00:00"
         },
         {
             "name": "anax/anax-lite",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/anax-lite.git",
-                "reference": "de386bb8f6d556066a35ec5d4791a966f0bed818"
+                "reference": "768a8c23844afb5d64f1478d75f202f1b164933e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/anax-lite/zipball/de386bb8f6d556066a35ec5d4791a966f0bed818",
-                "reference": "de386bb8f6d556066a35ec5d4791a966f0bed818",
+                "url": "https://api.github.com/repos/canax/anax-lite/zipball/768a8c23844afb5d64f1478d75f202f1b164933e",
+                "reference": "768a8c23844afb5d64f1478d75f202f1b164933e",
                 "shasum": ""
             },
             "require": {
-                "anax/common": "^1.0",
-                "anax/configure": "^1.0",
-                "anax/request": "^1.0",
-                "anax/response": "^1.0",
-                "anax/router": "^1.0",
-                "anax/session": "^1.0",
-                "anax/url": "^1.0",
-                "anax/view": "^1.0",
+                "anax/common": "^1.0.0",
+                "anax/configure": "^1.0.0",
+                "anax/request": "^1.1.0",
+                "anax/response": "^1.0.0",
+                "anax/router": "^1.1.0",
+                "anax/session": "^1.0.0",
+                "anax/url": "^1.0.0",
+                "anax/view": "^1.0.0",
                 "php": "^7.2"
             },
             "type": "library",
@@ -92,14 +92,14 @@
                     "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "The Anax (micro) framework, a customised release with only the bare essentials.",
+            "description": "The Anax Lite (micro) framework, only the bare essentials.",
             "homepage": "https://github.com/canax/anax-lite",
             "keywords": [
                 "anax",
                 "framework",
                 "micro framework"
             ],
-            "time": "2018-05-08T12:10:16+00:00"
+            "time": "2018-05-08T13:01:52+00:00"
         },
         {
             "name": "anax/common",
