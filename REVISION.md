@@ -8,6 +8,8 @@ v1.0.* (2018-05-08)
 * Update README with link to docker image.
 * Add make install-production to limit size of Docker container.
 * Remove unused mos/cimage from composer.json.
+* Separate documentation for docker and docker-composer.
+
 
 
 v1.0.1 (2018-05-08)
