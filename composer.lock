@@ -4,28 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8af11c83dfdc1d37ce66607155d0a278",
+    "content-hash": "7c0d1e3283b2f21a9bee9f2abcb79b11",
     "packages": [
         {
-            "name": "anax/anax",
-            "version": "v1.0.2",
+            "name": "anax/cache",
+            "version": "v2.0.0-beta.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/canax/anax.git",
-                "reference": "ac16c6adbf6507deb687b3d5287dc124c748c2ec"
+                "url": "https://github.com/canax/cache.git",
+                "reference": "1004bc303d941fd756e7e1ce13cc64f99a0d5113"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/anax/zipball/ac16c6adbf6507deb687b3d5287dc124c748c2ec",
-                "reference": "ac16c6adbf6507deb687b3d5287dc124c748c2ec",
+                "url": "https://api.github.com/repos/canax/cache/zipball/1004bc303d941fd756e7e1ce13cc64f99a0d5113",
+                "reference": "1004bc303d941fd756e7e1ce13cc64f99a0d5113",
                 "shasum": ""
             },
             "require": {
-                "anax/anax-lite": "^1.0.0",
-                "anax/page": "^1.1.0",
-                "anax/textfilter": "^1.0.0",
                 "php": "^7.2",
-                "symfony/yaml": "^3.4.0"
+                "psr/simple-cache": "^1.0"
+            },
+            "require-dev": {
+                "anax/di": "^2.0.0@alpha",
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "autoload": {
@@ -43,80 +44,35 @@
                     "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "The Anax framework.",
-            "homepage": "https://github.com/canax/anax",
+            "description": "Anax Cache module, caching like PSR-6/16.",
+            "homepage": "https://github.com/canax/cache",
             "keywords": [
                 "anax",
                 "framework"
             ],
-            "time": "2018-05-08T13:21:16+00:00"
+            "time": "2018-10-22T13:29:45+00:00"
         },
         {
-            "name": "anax/anax-lite",
-            "version": "v1.0.2",
+            "name": "anax/commons",
+            "version": "v2.0.14",
             "source": {
                 "type": "git",
-                "url": "https://github.com/canax/anax-lite.git",
-                "reference": "768a8c23844afb5d64f1478d75f202f1b164933e"
+                "url": "https://github.com/canax/commons.git",
+                "reference": "32aae87e78a978f13865e2f88bb2a5ab9b6a5dd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/anax-lite/zipball/768a8c23844afb5d64f1478d75f202f1b164933e",
-                "reference": "768a8c23844afb5d64f1478d75f202f1b164933e",
+                "url": "https://api.github.com/repos/canax/commons/zipball/32aae87e78a978f13865e2f88bb2a5ab9b6a5dd5",
+                "reference": "32aae87e78a978f13865e2f88bb2a5ab9b6a5dd5",
                 "shasum": ""
             },
             "require": {
-                "anax/common": "^1.0.0",
-                "anax/configure": "^1.0.0",
-                "anax/request": "^1.1.0",
-                "anax/response": "^1.0.0",
-                "anax/router": "^1.1.0",
-                "anax/session": "^1.0.0",
-                "anax/url": "^1.0.0",
-                "anax/view": "^1.0.0",
                 "php": "^7.2"
             },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Anax\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se"
-                }
-            ],
-            "description": "The Anax Lite (micro) framework, only the bare essentials.",
-            "homepage": "https://github.com/canax/anax-lite",
-            "keywords": [
-                "anax",
-                "framework",
-                "micro framework"
-            ],
-            "time": "2018-05-08T13:01:52+00:00"
-        },
-        {
-            "name": "anax/common",
-            "version": "v1.0.20",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/canax/common.git",
-                "reference": "81884238755442413dcbdeaf6dd2f668aa7a70e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/canax/common/zipball/81884238755442413dcbdeaf6dd2f668aa7a70e6",
-                "reference": "81884238755442413dcbdeaf6dd2f668aa7a70e6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
+            "require-dev": {
+                "anax/di": "^2.0.0@alpha",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^9"
             },
             "type": "library",
             "autoload": {
@@ -134,38 +90,37 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax Common functions and classes.",
-            "homepage": "https://dbwebb.se/anax",
+            "description": "Anax Commons module, stuff used by several modules.",
+            "homepage": "https://github.com/canax/commons",
             "keywords": [
-                "boilerplate",
-                "education",
-                "framework",
-                "micro",
-                "mvc"
+                "anax",
+                "framework"
             ],
-            "time": "2017-10-19T13:51:37+00:00"
+            "time": "2020-11-02T22:22:27+00:00"
         },
         {
             "name": "anax/configure",
-            "version": "v1.0.5",
+            "version": "v2.0.0-beta.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/configure.git",
-                "reference": "7247e1938bdf97b19090ac8024f2fd264ac8b6b4"
+                "reference": "82ab585dacaf8ed11109b8e6df53a77bf1e7d60b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/configure/zipball/7247e1938bdf97b19090ac8024f2fd264ac8b6b4",
-                "reference": "7247e1938bdf97b19090ac8024f2fd264ac8b6b4",
+                "url": "https://api.github.com/repos/canax/configure/zipball/82ab585dacaf8ed11109b8e6df53a77bf1e7d60b",
+                "reference": "82ab585dacaf8ed11109b8e6df53a77bf1e7d60b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "anax/di": "^2.0.0@alpha",
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "autoload": {
@@ -180,12 +135,60 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax Configure module for reading config files.",
+            "description": "Anax Configure module, for reading config files.",
+            "homepage": "https://dbwebb.se/anax",
+            "keywords": [
+                "boilerplate",
+                "education",
+                "framework",
+                "mvc"
+            ],
+            "time": "2018-08-15T15:05:56+00:00"
+        },
+        {
+            "name": "anax/content",
+            "version": "v2.0.0-beta.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/content.git",
+                "reference": "3b90aab003cea1b38eb16f4a4cb4b33412a19130"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/content/zipball/3b90aab003cea1b38eb16f4a4cb4b33412a19130",
+                "reference": "3b90aab003cea1b38eb16f4a4cb4b33412a19130",
+                "shasum": ""
+            },
+            "require": {
+                "anax/commons": "^2.0.0@alpha",
+                "anax/router": "^2.0.0@alpha",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "anax/configure": "^2.0.0@alpha",
+                "anax/di": "^2.0.0@alpha",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "Anax Content module, filebased flat file content.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
                 "boilerplate",
@@ -194,25 +197,218 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2018-03-16T14:47:26+00:00"
+            "time": "2018-12-03T20:41:04+00:00"
+        },
+        {
+            "name": "anax/controller",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/controller.git",
+                "reference": "9d591eba3c5e7915ab6989103d4025ccaf185f9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/controller/zipball/9d591eba3c5e7915ab6989103d4025ccaf185f9d",
+                "reference": "9d591eba3c5e7915ab6989103d4025ccaf185f9d",
+                "shasum": ""
+            },
+            "require": {
+                "anax/commons": "^2.0.0@alpha",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "anax/di": "^2.0.0@alpha",
+                "anax/request": "^2.0.0@alpha",
+                "anax/response": "^2.0.0@alpha",
+                "anax/view": "^2.0.0@alpha",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "Anax Controller module, with sample starter controllers.",
+            "homepage": "https://dbwebb.se/anax",
+            "keywords": [
+                "boilerplate",
+                "education",
+                "framework",
+                "micro",
+                "mvc"
+            ],
+            "time": "2020-05-15T20:58:04+00:00"
+        },
+        {
+            "name": "anax/database",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/database.git",
+                "reference": "abe5227da417a87b08d1b9bce6c9b1c310e5f1d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/database/zipball/abe5227da417a87b08d1b9bce6c9b1c310e5f1d4",
+                "reference": "abe5227da417a87b08d1b9bce6c9b1c310e5f1d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "Anax Database module, to work with databases.",
+            "homepage": "https://dbwebb.se/anax",
+            "keywords": [
+                "Database Access Layer",
+                "database",
+                "dba"
+            ],
+            "time": "2020-10-23T13:02:25+00:00"
+        },
+        {
+            "name": "anax/database-active-record",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/database-active-record.git",
+                "reference": "c848e37a65970d895b0a52e92c49bee6279d16a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/database-active-record/zipball/c848e37a65970d895b0a52e92c49bee6279d16a6",
+                "reference": "c848e37a65970d895b0a52e92c49bee6279d16a6",
+                "shasum": ""
+            },
+            "require": {
+                "anax/database-query-builder": "^2",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "Anax Database Active Record module for model classes.",
+            "homepage": "https://dbwebb.se/anax",
+            "keywords": [
+                "Active Record",
+                "database",
+                "dba",
+                "query builder"
+            ],
+            "time": "2019-12-11T15:50:58+00:00"
+        },
+        {
+            "name": "anax/database-query-builder",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/database-query-builder.git",
+                "reference": "752ab497e9632dfc41475835c0a07336ff8a27ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/database-query-builder/zipball/752ab497e9632dfc41475835c0a07336ff8a27ce",
+                "reference": "752ab497e9632dfc41475835c0a07336ff8a27ce",
+                "shasum": ""
+            },
+            "require": {
+                "anax/database": "^2",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "Anax Database Query Builder module, create queries through methods.",
+            "homepage": "https://dbwebb.se/anax",
+            "keywords": [
+                "database",
+                "dba",
+                "query builder"
+            ],
+            "time": "2019-12-09T22:26:50+00:00"
         },
         {
             "name": "anax/di",
-            "version": "v1.0.9",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/di.git",
-                "reference": "f60264fdb3676bb507e1caedb96cdbfe60b0c6a6"
+                "reference": "64ea8749a3f5b53e7fcbb6be0b365734face7623"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/di/zipball/f60264fdb3676bb507e1caedb96cdbfe60b0c6a6",
-                "reference": "f60264fdb3676bb507e1caedb96cdbfe60b0c6a6",
+                "url": "https://api.github.com/repos/canax/di/zipball/64ea8749a3f5b53e7fcbb6be0b365734face7623",
+                "reference": "64ea8749a3f5b53e7fcbb6be0b365734face7623",
                 "shasum": ""
             },
             "require": {
-                "anax/configure": "^1.0",
-                "php": ">=5.6"
+                "php": "^7.2",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "autoload": {
@@ -227,12 +423,10 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax dependency injection module.",
+            "description": "Anax DI module, dependency injection (PHP-FIG PSR-11).",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
                 "boilerplate",
@@ -241,28 +435,125 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-15T19:52:22+00:00"
+            "time": "2018-11-16T11:07:00+00:00"
+        },
+        {
+            "name": "anax/log",
+            "version": "v2.0.0-beta.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/log.git",
+                "reference": "4536127b7056c2c9194ab1df5e52feeac66e51ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/log/zipball/4536127b7056c2c9194ab1df5e52feeac66e51ee",
+                "reference": "4536127b7056c2c9194ab1df5e52feeac66e51ee",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "psr/log": "^1"
+            },
+            "require-dev": {
+                "anax/commons": "^2.0.0@beta",
+                "anax/di": "^2.0.0@beta",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "Anax Log module, for logging like PSR-3.",
+            "homepage": "https://github.com/canax/log",
+            "keywords": [
+                "anax",
+                "framework"
+            ],
+            "time": "2018-08-30T19:35:22+00:00"
+        },
+        {
+            "name": "anax/navigation",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/navigation.git",
+                "reference": "491cec646930009ea92a4efe3398eecebbb3e5ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/navigation/zipball/491cec646930009ea92a4efe3398eecebbb3e5ff",
+                "reference": "491cec646930009ea92a4efe3398eecebbb3e5ff",
+                "shasum": ""
+            },
+            "require": {
+                "anax/commons": "^2.0.0@beta",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "Anax Navigation module, for menus, navbars and navigation.",
+            "homepage": "https://github.com/canax/navigation",
+            "keywords": [
+                "anax",
+                "framework"
+            ],
+            "time": "2020-05-06T13:16:16+00:00"
         },
         {
             "name": "anax/page",
-            "version": "v1.1.1",
+            "version": "v2.0.0-beta.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/page.git",
-                "reference": "4f602e9fefdc4151d2957c5c29226775470685ae"
+                "reference": "103ff5e9e317b841401e0f1dae3da681e33797fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/page/zipball/4f602e9fefdc4151d2957c5c29226775470685ae",
-                "reference": "4f602e9fefdc4151d2957c5c29226775470685ae",
+                "url": "https://api.github.com/repos/canax/page/zipball/103ff5e9e317b841401e0f1dae3da681e33797fe",
+                "reference": "103ff5e9e317b841401e0f1dae3da681e33797fe",
                 "shasum": ""
             },
             "require": {
-                "anax/di": "^1.0",
-                "anax/request": "^1.0",
-                "anax/response": "^1.0",
-                "anax/view": "^1.0",
-                "php": ">=7.0"
+                "anax/commons": "^2.0.0@alpha",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "anax/configure": "^2.0.0@alpha",
+                "anax/di": "^2.0.0@alpha",
+                "anax/request": "^2.0.0@alpha",
+                "anax/response": "^2.0.0@alpha",
+                "anax/view": "^2.0.0@alpha",
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "autoload": {
@@ -277,12 +568,10 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax page module.",
+            "description": "Anax Page module, wrapper to ease create web pages.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
                 "boilerplate",
@@ -291,34 +580,77 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2018-04-23T13:30:52+00:00"
+            "time": "2018-08-15T14:59:59+00:00"
         },
         {
-            "name": "anax/remserver",
-            "version": "v1.1.0",
+            "name": "anax/proxy",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/canax/remserver.git",
-                "reference": "e665399637134ca85cf1e62ffc438cbcc6471a17"
+                "url": "https://github.com/canax/proxy.git",
+                "reference": "f54fce4bc9497528c31b8b2720f30b96a0fe8181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/remserver/zipball/e665399637134ca85cf1e62ffc438cbcc6471a17",
-                "reference": "e665399637134ca85cf1e62ffc438cbcc6471a17",
+                "url": "https://api.github.com/repos/canax/proxy/zipball/f54fce4bc9497528c31b8b2720f30b96a0fe8181",
+                "reference": "f54fce4bc9497528c31b8b2720f30b96a0fe8181",
                 "shasum": ""
             },
             "require": {
-                "anax/configure": "^1.0",
-                "anax/di": "^1.0",
-                "anax/page": "^1.0",
-                "anax/request": "^1.0",
-                "anax/response": "^1.0",
-                "anax/router": "^1.0",
-                "anax/session": "^1.0",
-                "anax/textfilter": "^1.0",
-                "anax/url": "^1.0",
-                "anax/view": "^1.0",
-                "php": ">=7.0"
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "anax/di": "^2.0.0",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se"
+                }
+            ],
+            "description": "Anax Proxy module, for static access to di service container.",
+            "homepage": "https://github.com/canax/proxy",
+            "keywords": [
+                "Facade_pattern",
+                "Proxy_pattern",
+                "anax",
+                "framework"
+            ],
+            "time": "2018-11-20T16:43:02+00:00"
+        },
+        {
+            "name": "anax/remserver",
+            "version": "v2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/remserver.git",
+                "reference": "dded571c0c278d3a18fbd1ef931ed9162e590c16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/remserver/zipball/dded571c0c278d3a18fbd1ef931ed9162e590c16",
+                "reference": "dded571c0c278d3a18fbd1ef931ed9162e590c16",
+                "shasum": ""
+            },
+            "require": {
+                "anax/commons": "^2.0.14",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "anax/anax": "^2.0.17",
+                "phpmetrics/phpmetrics": "^2",
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "autoload": {
@@ -347,24 +679,28 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2018-03-08T20:56:24+00:00"
+            "time": "2020-11-09T23:44:30+00:00"
         },
         {
             "name": "anax/request",
-            "version": "v1.1.1",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/request.git",
-                "reference": "4a5ddedbc1ca8fd735a404f99a0fc35ea156aa0a"
+                "reference": "0da6f9b423d8d37fbf14b2174a39fc6f2b397fe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/request/zipball/4a5ddedbc1ca8fd735a404f99a0fc35ea156aa0a",
-                "reference": "4a5ddedbc1ca8fd735a404f99a0fc35ea156aa0a",
+                "url": "https://api.github.com/repos/canax/request/zipball/0da6f9b423d8d37fbf14b2174a39fc6f2b397fe7",
+                "reference": "0da6f9b423d8d37fbf14b2174a39fc6f2b397fe7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0"
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "anax/di": "^2.0.4",
+                "phpunit/phpunit": "^8"
             },
             "type": "library",
             "autoload": {
@@ -379,12 +715,10 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax Request class.",
+            "description": "Anax Request module, details on the request.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
                 "boilerplate",
@@ -393,25 +727,30 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2018-04-25T06:16:13+00:00"
+            "time": "2020-11-06T00:20:32+00:00"
         },
         {
             "name": "anax/response",
-            "version": "v1.0.8",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/response.git",
-                "reference": "e4192e0489c9877cf107e109b253da5c1afa61ae"
+                "reference": "5bb132a0868a14a5fe5108f59e0f9502b7823833"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/response/zipball/e4192e0489c9877cf107e109b253da5c1afa61ae",
-                "reference": "e4192e0489c9877cf107e109b253da5c1afa61ae",
+                "url": "https://api.github.com/repos/canax/response/zipball/5bb132a0868a14a5fe5108f59e0f9502b7823833",
+                "reference": "5bb132a0868a14a5fe5108f59e0f9502b7823833",
                 "shasum": ""
             },
             "require": {
-                "anax/di": "^1.0",
-                "php": ">=5.6"
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "anax/commons": "^2.0.0@alpha",
+                "anax/configure": "^2.0.0@alpha",
+                "anax/di": "^2.0.0@alpha",
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "autoload": {
@@ -426,12 +765,10 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax Response module.",
+            "description": "Anax Response module, to create a HTTP response.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
                 "boilerplate",
@@ -440,26 +777,31 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-15T22:09:43+00:00"
+            "time": "2020-10-27T13:15:41+00:00"
         },
         {
             "name": "anax/router",
-            "version": "v1.1.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/router.git",
-                "reference": "9291048e58baf2c4e6207eb33ddd5f1c306eb06d"
+                "reference": "1795a5bfd77e1e962f5e9e3ac6adfd9f145e3885"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/router/zipball/9291048e58baf2c4e6207eb33ddd5f1c306eb06d",
-                "reference": "9291048e58baf2c4e6207eb33ddd5f1c306eb06d",
+                "url": "https://api.github.com/repos/canax/router/zipball/1795a5bfd77e1e962f5e9e3ac6adfd9f145e3885",
+                "reference": "1795a5bfd77e1e962f5e9e3ac6adfd9f145e3885",
                 "shasum": ""
             },
             "require": {
-                "anax/common": "1.0.*",
-                "anax/di": "1.0.*",
-                "php": ">=7.0"
+                "anax/commons": "^2.0.0@alpha",
+                "php": ">=7.2",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "anax/configure": "^2.0.0@alpha",
+                "anax/di": "^2.0.0@alpha",
+                "phpunit/phpunit": "^8"
             },
             "type": "library",
             "autoload": {
@@ -474,12 +816,10 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax Router module.",
+            "description": "Anax Router module, route requests to handlers.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
                 "boilerplate",
@@ -488,30 +828,32 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2018-03-16T14:43:54+00:00"
+            "time": "2020-05-19T09:32:07+00:00"
         },
         {
             "name": "anax/session",
-            "version": "v1.0.10",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/session.git",
-                "reference": "376bb3a02d3a93f5044646bacda9103976ddfd91"
+                "reference": "d21c56d8c4273d1f6159b6a5a2f4f671de05916d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/session/zipball/376bb3a02d3a93f5044646bacda9103976ddfd91",
-                "reference": "376bb3a02d3a93f5044646bacda9103976ddfd91",
+                "url": "https://api.github.com/repos/canax/session/zipball/d21c56d8c4273d1f6159b6a5a2f4f671de05916d",
+                "reference": "d21c56d8c4273d1f6159b6a5a2f4f671de05916d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": "^7.2"
             },
             "require-dev": {
-                "anax/configure": "^1.0"
+                "anax/configure": "^2.0.0@alpha",
+                "anax/di": "^2.0.0@alpha",
+                "phpunit/phpunit": "^7"
             },
             "suggest": {
-                "anax/configure": "^1.0"
+                "anax/configure": "^2.0.0@alpha"
             },
             "type": "library",
             "autoload": {
@@ -526,12 +868,10 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax Session module.",
+            "description": "Anax Session module, a wrapper around sessions.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
                 "boilerplate",
@@ -540,28 +880,33 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2018-04-25T06:15:14+00:00"
+            "time": "2020-04-23T08:10:33+00:00"
         },
         {
             "name": "anax/textfilter",
-            "version": "v1.0.2",
+            "version": "v1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/textfilter.git",
-                "reference": "0fe7b6839a86a2256d22b7f59d10ee92663f89f1"
+                "reference": "a90177cd404b093541222fd0d6cf71907ac2ce25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/textfilter/zipball/0fe7b6839a86a2256d22b7f59d10ee92663f89f1",
-                "reference": "0fe7b6839a86a2256d22b7f59d10ee92663f89f1",
+                "url": "https://api.github.com/repos/canax/textfilter/zipball/a90177cd404b093541222fd0d6cf71907ac2ce25",
+                "reference": "a90177cd404b093541222fd0d6cf71907ac2ce25",
                 "shasum": ""
             },
             "require": {
-                "ezyang/htmlpurifier": "4.*",
-                "michelf/php-markdown": "1.6.*",
-                "michelf/php-smartypants": "1.6.*",
-                "php": ">=5.6",
+                "ezyang/htmlpurifier": "^4.0",
+                "michelf/php-markdown": "^1.6",
+                "michelf/php-smartypants": "^1.6",
+                "php": ">=7.0",
                 "scrivo/highlight.php": "^9.0"
+            },
+            "require-dev": {
+                "mustangostang/spyc": "^0.6.2",
+                "phpunit/phpunit": "^7",
+                "symfony/yaml": "^3.4"
             },
             "suggest": {
                 "ext-json": "*",
@@ -585,34 +930,37 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Anax TextFilter module.",
+            "description": "Anax TextFilter module, frontmatter, shortcodes, markdown.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
-                "boilerplate",
+                "anax",
                 "education",
-                "framework",
-                "micro",
-                "mvc"
+                "frontmatter",
+                "shortcodes",
+                "textprocessing"
             ],
-            "time": "2017-10-02T10:25:31+00:00"
+            "time": "2019-04-01T07:26:14+00:00"
         },
         {
             "name": "anax/url",
-            "version": "v1.0.9",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/url.git",
-                "reference": "c1d99076b59b13ccde498642b423ccf676518eed"
+                "reference": "103cdb40888313d091abdfbaf3dab23ec03940af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/url/zipball/c1d99076b59b13ccde498642b423ccf676518eed",
-                "reference": "c1d99076b59b13ccde498642b423ccf676518eed",
+                "url": "https://api.github.com/repos/canax/url/zipball/103cdb40888313d091abdfbaf3dab23ec03940af",
+                "reference": "103cdb40888313d091abdfbaf3dab23ec03940af",
                 "shasum": ""
             },
             "require": {
-                "anax/configure": "^1.0",
-                "php": ">=5.6"
+                "anax/configure": "^2.0.0@alpha",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "autoload": {
@@ -627,47 +975,51 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax Url class.",
+            "description": "Anax Url module, to create links to urls and assets.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
-                "boilerplate",
+                "anax",
                 "education",
                 "framework",
                 "micro",
                 "mvc"
             ],
-            "time": "2017-12-04T10:44:29+00:00"
+            "time": "2020-05-27T08:44:36+00:00"
         },
         {
             "name": "anax/view",
-            "version": "v1.0.26",
+            "version": "v2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/view.git",
-                "reference": "2a3466b2d151a4f0f78d1259e94e79853b831a15"
+                "reference": "91112696cdef1a3e3273e7185365edc03cc9edb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/view/zipball/2a3466b2d151a4f0f78d1259e94e79853b831a15",
-                "reference": "2a3466b2d151a4f0f78d1259e94e79853b831a15",
+                "url": "https://api.github.com/repos/canax/view/zipball/91112696cdef1a3e3273e7185365edc03cc9edb4",
+                "reference": "91112696cdef1a3e3273e7185365edc03cc9edb4",
                 "shasum": ""
             },
             "require": {
-                "anax/common": "^1.0",
-                "anax/configure": "^1.0",
-                "anax/di": "^1.0",
-                "php": ">=5.6"
+                "anax/commons": "^2.0.0@alpha",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "anax/configure": "^2.0.0@alpha",
+                "anax/di": "^2.0.0@alpha",
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Anax\\": "src/"
-                }
+                },
+                "files": [
+                    "src/View/ViewHelperFunctions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -676,41 +1028,36 @@
             "authors": [
                 {
                     "name": "Mikael Roos",
-                    "email": "mos@dbwebb.se",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
+                    "email": "mos@dbwebb.se"
                 }
             ],
-            "description": "Anax View module.",
+            "description": "Anax View module, collect and render views.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
-                "boilerplate",
-                "education",
-                "framework",
-                "micro",
-                "mvc"
+                "anax",
+                "template"
             ],
-            "time": "2018-04-23T12:58:25+00:00"
+            "time": "2020-11-09T23:39:08+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.10.0",
+            "version": "v4.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "d85d39da4576a6934b72480be6978fb10c860021"
+                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d85d39da4576a6934b72480be6978fb10c860021",
-                "reference": "d85d39da4576a6934b72480be6978fb10c860021",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
+                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
             },
             "require-dev": {
-                "simpletest/simpletest": "^1.1"
+                "simpletest/simpletest": "dev-master#72de02a7b80c6bb8864ef9bf66d41d2f58f826bd"
             },
             "type": "library",
             "autoload": {
@@ -719,11 +1066,14 @@
                 },
                 "files": [
                     "library/HTMLPurifier.composer.php"
+                ],
+                "exclude-from-classmap": [
+                    "/library/HTMLPurifier/Language/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL"
+                "LGPL-2.1-or-later"
             ],
             "authors": [
                 {
@@ -737,34 +1087,32 @@
             "keywords": [
                 "html"
             ],
-            "time": "2018-02-23T01:58:20+00:00"
+            "time": "2020-06-29T00:56:53+00:00"
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.6.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "156e56ee036505ec637d761ee62dc425d807183c"
+                "reference": "c83178d49e372ca967d1a8c77ae4e051b3a3c75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/156e56ee036505ec637d761ee62dc425d807183c",
-                "reference": "156e56ee036505ec637d761ee62dc425d807183c",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/c83178d49e372ca967d1a8c77ae4e051b3a3c75c",
+                "reference": "c83178d49e372ca967d1a8c77ae4e051b3a3c75c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-lib": "1.4.x-dev"
-                }
+            "require-dev": {
+                "phpunit/phpunit": ">=4.3 <5.8"
             },
+            "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Michelf": ""
+                "psr-4": {
+                    "Michelf\\": "Michelf/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -788,31 +1136,26 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2015-12-24T01:37:31+00:00"
+            "time": "2019-12-02T02:32:27+00:00"
         },
         {
             "name": "michelf/php-smartypants",
-            "version": "1.6.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-smartypants.git",
-                "reference": "674badae316a957173c67dd3184e21cb6807d7fb"
+                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-smartypants/zipball/674badae316a957173c67dd3184e21cb6807d7fb",
-                "reference": "674badae316a957173c67dd3184e21cb6807d7fb",
+                "url": "https://api.github.com/repos/michelf/php-smartypants/zipball/47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
+                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-lib": "1.6.x-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Michelf": ""
@@ -843,31 +1186,249 @@
                 "typographer",
                 "typography"
             ],
-            "time": "2016-10-10T18:14:08+00:00"
+            "time": "2016-12-13T01:01:17+00:00"
         },
         {
-            "name": "scrivo/highlight.php",
-            "version": "v9.12.0.2",
+            "name": "mos/cimage",
+            "version": "v0.7.23",
             "source": {
                 "type": "git",
-                "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "186ad7df8c02f0cbe5e8dd13f98a8b2778b2b608"
+                "url": "https://github.com/mosbth/cimage.git",
+                "reference": "1411adc828e46b9a383f2286944454c8fc99f9e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/186ad7df8c02f0cbe5e8dd13f98a8b2778b2b608",
-                "reference": "186ad7df8c02f0cbe5e8dd13f98a8b2778b2b608",
+                "url": "https://api.github.com/repos/mosbth/cimage/zipball/1411adc828e46b9a383f2286944454c8fc99f9e0",
+                "reference": "1411adc828e46b9a383f2286944454c8fc99f9e0",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3"
+            },
+            "suggest": {
+                "ext-curl": "*",
+                "ext-exif": "*",
+                "ext-gd": "*",
+                "ext-imagick": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "defines.php",
+                    "functions.php"
+                ],
+                "classmap": [
+                    "CImage.php",
+                    "CHttpGet.php",
+                    "CRemoteImage.php",
+                    "CWhitelist.php",
+                    "CAsciiArt.php",
+                    "CCache.php",
+                    "CFastTrackCache.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "me@mikaelroos.se",
+                    "homepage": "http://mikaelroos.se",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Process, scale, resize, crop and filter images.",
+            "homepage": "http://dbwebb.se/opensource/cimage",
+            "keywords": [
+                "gd",
+                "image",
+                "imageprocessing"
+            ],
+            "time": "2020-05-06T07:51:12+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2020-03-23T09:12:05+00:00"
+        },
+        {
+            "name": "psr/simple-cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
+            "name": "scrivo/highlight.php",
+            "version": "v9.18.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/scrivo/highlight.php.git",
+                "reference": "ee8007a215a27cb9c078e0328fb5de901d74ef9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/ee8007a215a27cb9c078e0328fb5de901d74ef9b",
+                "reference": "ee8007a215a27cb9c078e0328fb5de901d74ef9b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.4"
+            },
             "require-dev": {
-                "phpunit/phpunit": "^4.8",
-                "symfony/finder": "^2.8"
+                "phpunit/phpunit": "^4.8|^5.7",
+                "sabberworm/php-css-parser": "^8.3",
+                "symfony/finder": "^2.8|^3.4",
+                "symfony/var-dumper": "^2.8|^3.4"
+            },
+            "suggest": {
+                "ext-dom": "Needed to make use of the features in the utilities namespace"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Highlight\\": ""
-                }
+                    "Highlight\\": "",
+                    "HighlightUtilities\\": ""
+                },
+                "files": [
+                    "HighlightUtilities/functions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -882,7 +1443,7 @@
                 {
                     "name": "Vladimir Jimenez",
                     "homepage": "https://allejo.io",
-                    "role": "Contributor"
+                    "role": "Maintainer"
                 },
                 {
                     "name": "Martin Folkers",
@@ -890,7 +1451,7 @@
                     "role": "Contributor"
                 }
             ],
-            "description": "Server side syntax highlighter that supports 176 languages. It's a PHP port of highlight.js",
+            "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",
             "keywords": [
                 "code",
                 "highlight",
@@ -898,24 +1459,107 @@
                 "highlight.php",
                 "syntax"
             ],
-            "time": "2018-02-19T02:38:14+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/allejo",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-01T04:06:53+00:00"
         },
         {
-            "name": "symfony/yaml",
-            "version": "v3.4.9",
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.20.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "033cfa61ef06ee0847e056e530201842b6e926c3"
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/033cfa61ef06ee0847e056e530201842b6e926c3",
-                "reference": "033cfa61ef06ee0847e056e530201842b6e926c3",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f4ba089a5b6366e453971d3aad5fe8e897b37f41",
+                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9|>=7.0.8"
+                "php": ">=7.1"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.20-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-23T14:02:19+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v3.4.46",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "88289caa3c166321883f67fe5130188ebbb47094"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/88289caa3c166321883f67fe5130188ebbb47094",
+                "reference": "88289caa3c166321883f67fe5130188ebbb47094",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/polyfill-ctype": "~1.8"
             },
             "conflict": {
                 "symfony/console": "<3.4"
@@ -927,11 +1571,6 @@
                 "symfony/console": "For validating YAML files using the lint command"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.4-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Yaml\\": ""
@@ -956,15 +1595,1588 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2018-04-08T08:21:29+00:00"
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-24T10:57:07+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "doctrine/instantiator",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/instantiator.git",
+                "reference": "f350df0268e904597e3bd9c4685c53e0e333feea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/f350df0268e904597e3bd9c4685c53e0e333feea",
+                "reference": "f350df0268e904597e3bd9c4685c53e0e333feea",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^6.0",
+                "ext-pdo": "*",
+                "ext-phar": "*",
+                "phpbench/phpbench": "^0.13",
+                "phpstan/phpstan-phpunit": "^0.11",
+                "phpstan/phpstan-shim": "^0.11",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/"
+                }
+            ],
+            "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
+            "homepage": "https://www.doctrine-project.org/projects/instantiator.html",
+            "keywords": [
+                "constructor",
+                "instantiate"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finstantiator",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-29T17:27:14+00:00"
+        },
+        {
+            "name": "myclabs/deep-copy",
+            "version": "1.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myclabs/DeepCopy.git",
+                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
+                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "replace": {
+                "myclabs/deep-copy": "self.version"
+            },
+            "require-dev": {
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DeepCopy\\": "src/DeepCopy/"
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Create deep copies (clones) of your objects",
+            "keywords": [
+                "clone",
+                "copy",
+                "duplicate",
+                "object",
+                "object graph"
+            ],
+            "funding": [
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/myclabs/deep-copy",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-29T13:22:24+00:00"
+        },
+        {
+            "name": "phar-io/manifest",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phar-io/manifest.git",
+                "reference": "7761fcacf03b4d4f16e7ccb606d4879ca431fcf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phar-io/manifest/zipball/7761fcacf03b4d4f16e7ccb606d4879ca431fcf4",
+                "reference": "7761fcacf03b4d4f16e7ccb606d4879ca431fcf4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-phar": "*",
+                "phar-io/version": "^2.0",
+                "php": "^5.6 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Arne Blankerts",
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian Heuer",
+                    "email": "sebastian@phpeople.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
+            "time": "2018-07-08T19:23:20+00:00"
+        },
+        {
+            "name": "phar-io/version",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phar-io/version.git",
+                "reference": "45a2ec53a73c70ce41d55cedef9063630abaf1b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/45a2ec53a73c70ce41d55cedef9063630abaf1b6",
+                "reference": "45a2ec53a73c70ce41d55cedef9063630abaf1b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Arne Blankerts",
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian Heuer",
+                    "email": "sebastian@phpeople.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Library for handling version information and constraints",
+            "time": "2018-07-08T19:19:57+00:00"
+        },
+        {
+            "name": "phpdocumentor/reflection-common",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
+                "reference": "1d01c49d4ed62f25aa84a747ad35d5a16924662b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/1d01c49d4ed62f25aa84a747ad35d5a16924662b",
+                "reference": "1d01c49d4ed62f25aa84a747ad35d5a16924662b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jaap van Otterdijk",
+                    "email": "opensource@ijaap.nl"
+                }
+            ],
+            "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
+            "homepage": "http://www.phpdoc.org",
+            "keywords": [
+                "FQSEN",
+                "phpDocumentor",
+                "phpdoc",
+                "reflection",
+                "static analysis"
+            ],
+            "time": "2020-06-27T09:03:43+00:00"
+        },
+        {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "5.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "069a785b2141f5bcf49f3e353548dc1cce6df556"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/069a785b2141f5bcf49f3e353548dc1cce6df556",
+                "reference": "069a785b2141f5bcf49f3e353548dc1cce6df556",
+                "shasum": ""
+            },
+            "require": {
+                "ext-filter": "*",
+                "php": "^7.2 || ^8.0",
+                "phpdocumentor/reflection-common": "^2.2",
+                "phpdocumentor/type-resolver": "^1.3",
+                "webmozart/assert": "^1.9.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                },
+                {
+                    "name": "Jaap van Otterdijk",
+                    "email": "account@ijaap.nl"
+                }
+            ],
+            "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+            "time": "2020-09-03T19:13:55+00:00"
+        },
+        {
+            "name": "phpdocumentor/type-resolver",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/TypeResolver.git",
+                "reference": "6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0",
+                "reference": "6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0",
+                "phpdocumentor/reflection-common": "^2.0"
+            },
+            "require-dev": {
+                "ext-tokenizer": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                }
+            ],
+            "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
+            "time": "2020-09-17T18:55:26+00:00"
+        },
+        {
+            "name": "phpspec/prophecy",
+            "version": "1.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpspec/prophecy.git",
+                "reference": "8ce87516be71aae9b956f81906aaf0338e0d8a2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8ce87516be71aae9b956f81906aaf0338e0d8a2d",
+                "reference": "8ce87516be71aae9b956f81906aaf0338e0d8a2d",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/instantiator": "^1.2",
+                "php": "^7.2 || ~8.0, <8.1",
+                "phpdocumentor/reflection-docblock": "^5.2",
+                "sebastian/comparator": "^3.0 || ^4.0",
+                "sebastian/recursion-context": "^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^6.0",
+                "phpunit/phpunit": "^8.0 || ^9.0 <9.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Prophecy\\": "src/Prophecy"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                },
+                {
+                    "name": "Marcello Duarte",
+                    "email": "marcello.duarte@gmail.com"
+                }
+            ],
+            "description": "Highly opinionated mocking framework for PHP 5.3+",
+            "homepage": "https://github.com/phpspec/prophecy",
+            "keywords": [
+                "Double",
+                "Dummy",
+                "fake",
+                "mock",
+                "spy",
+                "stub"
+            ],
+            "time": "2020-09-29T09:10:42+00:00"
+        },
+        {
+            "name": "phpstan/phpstan",
+            "version": "0.12.54",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "45c7b999a4b7dd9ac5558bdaaf23dcebbef88223"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/45c7b999a4b7dd9ac5558bdaaf23dcebbef88223",
+                "reference": "45c7b999a4b7dd9ac5558bdaaf23dcebbef88223",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpstan",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-11-05T13:36:26+00:00"
+        },
+        {
+            "name": "phpunit/php-code-coverage",
+            "version": "7.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+                "reference": "f1884187926fbb755a9aaf0b3836ad3165b478bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f1884187926fbb755a9aaf0b3836ad3165b478bf",
+                "reference": "f1884187926fbb755a9aaf0b3836ad3165b478bf",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-xmlwriter": "*",
+                "php": "^7.2",
+                "phpunit/php-file-iterator": "^2.0.2",
+                "phpunit/php-text-template": "^1.2.1",
+                "phpunit/php-token-stream": "^3.1.1",
+                "sebastian/code-unit-reverse-lookup": "^1.0.1",
+                "sebastian/environment": "^4.2.2",
+                "sebastian/version": "^2.0.1",
+                "theseer/tokenizer": "^1.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.2.2"
+            },
+            "suggest": {
+                "ext-xdebug": "^2.7.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
+            "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
+            "keywords": [
+                "coverage",
+                "testing",
+                "xunit"
+            ],
+            "time": "2019-11-20T13:55:58+00:00"
+        },
+        {
+            "name": "phpunit/php-file-iterator",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
+                "reference": "050bedf145a257b1ff02746c31894800e5122946"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/050bedf145a257b1ff02746c31894800e5122946",
+                "reference": "050bedf145a257b1ff02746c31894800e5122946",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "FilterIterator implementation that filters files based on a list of suffixes.",
+            "homepage": "https://github.com/sebastianbergmann/php-file-iterator/",
+            "keywords": [
+                "filesystem",
+                "iterator"
+            ],
+            "time": "2018-09-13T20:33:42+00:00"
+        },
+        {
+            "name": "phpunit/php-text-template",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-text-template.git",
+                "reference": "31f8b717e51d9a2afca6c9f046f5d69fc27c8686"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-text-template/zipball/31f8b717e51d9a2afca6c9f046f5d69fc27c8686",
+                "reference": "31f8b717e51d9a2afca6c9f046f5d69fc27c8686",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Simple template engine.",
+            "homepage": "https://github.com/sebastianbergmann/php-text-template/",
+            "keywords": [
+                "template"
+            ],
+            "time": "2015-06-21T13:50:34+00:00"
+        },
+        {
+            "name": "phpunit/php-timer",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-timer.git",
+                "reference": "1038454804406b0b5f5f520358e78c1c2f71501e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/1038454804406b0b5f5f520358e78c1c2f71501e",
+                "reference": "1038454804406b0b5f5f520358e78c1c2f71501e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Utility class for timing",
+            "homepage": "https://github.com/sebastianbergmann/php-timer/",
+            "keywords": [
+                "timer"
+            ],
+            "time": "2019-06-07T04:22:29+00:00"
+        },
+        {
+            "name": "phpunit/php-token-stream",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-token-stream.git",
+                "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/995192df77f63a59e47f025390d2d1fdf8f425ff",
+                "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Wrapper around PHP's tokenizer extension.",
+            "homepage": "https://github.com/sebastianbergmann/php-token-stream/",
+            "keywords": [
+                "tokenizer"
+            ],
+            "abandoned": true,
+            "time": "2019-09-17T06:23:10+00:00"
+        },
+        {
+            "name": "phpunit/phpunit",
+            "version": "8.5.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "34c18baa6a44f1d1fbf0338907139e9dce95b997"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/34c18baa6a44f1d1fbf0338907139e9dce95b997",
+                "reference": "34c18baa6a44f1d1fbf0338907139e9dce95b997",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/instantiator": "^1.2.0",
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-libxml": "*",
+                "ext-mbstring": "*",
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "myclabs/deep-copy": "^1.9.1",
+                "phar-io/manifest": "^1.0.3",
+                "phar-io/version": "^2.0.1",
+                "php": "^7.2",
+                "phpspec/prophecy": "^1.8.1",
+                "phpunit/php-code-coverage": "^7.0.7",
+                "phpunit/php-file-iterator": "^2.0.2",
+                "phpunit/php-text-template": "^1.2.1",
+                "phpunit/php-timer": "^2.1.2",
+                "sebastian/comparator": "^3.0.2",
+                "sebastian/diff": "^3.0.2",
+                "sebastian/environment": "^4.2.2",
+                "sebastian/exporter": "^3.1.1",
+                "sebastian/global-state": "^3.0.0",
+                "sebastian/object-enumerator": "^3.0.3",
+                "sebastian/resource-operations": "^2.0.1",
+                "sebastian/type": "^1.1.3",
+                "sebastian/version": "^2.0.1"
+            },
+            "require-dev": {
+                "ext-pdo": "*"
+            },
+            "suggest": {
+                "ext-soap": "*",
+                "ext-xdebug": "*",
+                "phpunit/php-invoker": "^2.0.0"
+            },
+            "bin": [
+                "phpunit"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.5-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "The PHP Unit Testing framework.",
+            "homepage": "https://phpunit.de/",
+            "keywords": [
+                "phpunit",
+                "testing",
+                "xunit"
+            ],
+            "funding": [
+                {
+                    "url": "https://phpunit.de/donate.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-22T07:06:58+00:00"
+        },
+        {
+            "name": "sebastian/code-unit-reverse-lookup",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/code-unit-reverse-lookup.git",
+                "reference": "4419fcdb5eabb9caa61a27c7a1db532a6b55dd18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/4419fcdb5eabb9caa61a27c7a1db532a6b55dd18",
+                "reference": "4419fcdb5eabb9caa61a27c7a1db532a6b55dd18",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Looks up which function or method a line of code belongs to",
+            "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
+            "time": "2017-03-04T06:30:41+00:00"
+        },
+        {
+            "name": "sebastian/comparator",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/comparator.git",
+                "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
+                "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "sebastian/diff": "^3.0",
+                "sebastian/exporter": "^3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@2bepublished.at"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Provides the functionality to compare PHP values for equality",
+            "homepage": "https://github.com/sebastianbergmann/comparator",
+            "keywords": [
+                "comparator",
+                "compare",
+                "equality"
+            ],
+            "time": "2018-07-12T15:12:46+00:00"
+        },
+        {
+            "name": "sebastian/diff",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/diff.git",
+                "reference": "720fcc7e9b5cf384ea68d9d930d480907a0c1a29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/720fcc7e9b5cf384ea68d9d930d480907a0c1a29",
+                "reference": "720fcc7e9b5cf384ea68d9d930d480907a0c1a29",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5 || ^8.0",
+                "symfony/process": "^2 || ^3.3 || ^4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Diff implementation",
+            "homepage": "https://github.com/sebastianbergmann/diff",
+            "keywords": [
+                "diff",
+                "udiff",
+                "unidiff",
+                "unified diff"
+            ],
+            "time": "2019-02-04T06:01:07+00:00"
+        },
+        {
+            "name": "sebastian/environment",
+            "version": "4.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/environment.git",
+                "reference": "464c90d7bdf5ad4e8a6aea15c091fec0603d4368"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/464c90d7bdf5ad4e8a6aea15c091fec0603d4368",
+                "reference": "464c90d7bdf5ad4e8a6aea15c091fec0603d4368",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5"
+            },
+            "suggest": {
+                "ext-posix": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Provides functionality to handle HHVM/PHP environments",
+            "homepage": "http://www.github.com/sebastianbergmann/environment",
+            "keywords": [
+                "Xdebug",
+                "environment",
+                "hhvm"
+            ],
+            "time": "2019-11-20T08:46:58+00:00"
+        },
+        {
+            "name": "sebastian/exporter",
+            "version": "3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/exporter.git",
+                "reference": "68609e1261d215ea5b21b7987539cbfbe156ec3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/68609e1261d215ea5b21b7987539cbfbe156ec3e",
+                "reference": "68609e1261d215ea5b21b7987539cbfbe156ec3e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "sebastian/recursion-context": "^3.0"
+            },
+            "require-dev": {
+                "ext-mbstring": "*",
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Adam Harvey",
+                    "email": "aharvey@php.net"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Provides the functionality to export PHP variables for visualization",
+            "homepage": "http://www.github.com/sebastianbergmann/exporter",
+            "keywords": [
+                "export",
+                "exporter"
+            ],
+            "time": "2019-09-14T09:02:43+00:00"
+        },
+        {
+            "name": "sebastian/global-state",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/global-state.git",
+                "reference": "edf8a461cf1d4005f19fb0b6b8b95a9f7fa0adc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/edf8a461cf1d4005f19fb0b6b8b95a9f7fa0adc4",
+                "reference": "edf8a461cf1d4005f19fb0b6b8b95a9f7fa0adc4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "sebastian/object-reflector": "^1.1.1",
+                "sebastian/recursion-context": "^3.0"
+            },
+            "require-dev": {
+                "ext-dom": "*",
+                "phpunit/phpunit": "^8.0"
+            },
+            "suggest": {
+                "ext-uopz": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Snapshotting of global state",
+            "homepage": "http://www.github.com/sebastianbergmann/global-state",
+            "keywords": [
+                "global state"
+            ],
+            "time": "2019-02-01T05:30:01+00:00"
+        },
+        {
+            "name": "sebastian/object-enumerator",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/object-enumerator.git",
+                "reference": "7cfd9e65d11ffb5af41198476395774d4c8a84c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/7cfd9e65d11ffb5af41198476395774d4c8a84c5",
+                "reference": "7cfd9e65d11ffb5af41198476395774d4c8a84c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "sebastian/object-reflector": "^1.1.1",
+                "sebastian/recursion-context": "^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Traverses array structures and object graphs to enumerate all referenced objects",
+            "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
+            "time": "2017-08-03T12:35:26+00:00"
+        },
+        {
+            "name": "sebastian/object-reflector",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/object-reflector.git",
+                "reference": "773f97c67f28de00d397be301821b06708fca0be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-reflector/zipball/773f97c67f28de00d397be301821b06708fca0be",
+                "reference": "773f97c67f28de00d397be301821b06708fca0be",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Allows reflection of object attributes, including inherited and non-public ones",
+            "homepage": "https://github.com/sebastianbergmann/object-reflector/",
+            "time": "2017-03-29T09:07:27+00:00"
+        },
+        {
+            "name": "sebastian/recursion-context",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/recursion-context.git",
+                "reference": "5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
+                "reference": "5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Adam Harvey",
+                    "email": "aharvey@php.net"
+                }
+            ],
+            "description": "Provides functionality to recursively process PHP variables",
+            "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
+            "time": "2017-03-03T06:23:57+00:00"
+        },
+        {
+            "name": "sebastian/resource-operations",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/resource-operations.git",
+                "reference": "4d7a795d35b889bf80a0cc04e08d77cedfa917a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/resource-operations/zipball/4d7a795d35b889bf80a0cc04e08d77cedfa917a9",
+                "reference": "4d7a795d35b889bf80a0cc04e08d77cedfa917a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Provides a list of PHP built-in functions that operate on resources",
+            "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
+            "time": "2018-10-04T04:07:39+00:00"
+        },
+        {
+            "name": "sebastian/type",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/type.git",
+                "reference": "3aaaa15fa71d27650d62a948be022fe3b48541a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/3aaaa15fa71d27650d62a948be022fe3b48541a3",
+                "reference": "3aaaa15fa71d27650d62a948be022fe3b48541a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Collection of value objects that represent the types of the PHP type system",
+            "homepage": "https://github.com/sebastianbergmann/type",
+            "time": "2019-07-02T08:10:15+00:00"
+        },
+        {
+            "name": "sebastian/version",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/version.git",
+                "reference": "99732be0ddb3361e16ad77b68ba41efc8e979019"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/99732be0ddb3361e16ad77b68ba41efc8e979019",
+                "reference": "99732be0ddb3361e16ad77b68ba41efc8e979019",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Library that helps with managing the version number of Git-hosted PHP projects",
+            "homepage": "https://github.com/sebastianbergmann/version",
+            "time": "2016-10-03T07:35:21+00:00"
+        },
+        {
+            "name": "theseer/tokenizer",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theseer/tokenizer.git",
+                "reference": "75a63c33a8577608444246075ea0af0d052e452a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/75a63c33a8577608444246075ea0af0d052e452a",
+                "reference": "75a63c33a8577608444246075ea0af0d052e452a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": "^7.2 || ^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Arne Blankerts",
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
+            "funding": [
+                {
+                    "url": "https://github.com/theseer",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-07-12T23:59:07+00:00"
+        },
+        {
+            "name": "webmozart/assert",
+            "version": "1.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/assert.git",
+                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0 || ^8.0",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "phpstan/phpstan": "<0.12.20",
+                "vimeo/psalm": "<3.9.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36 || ^7.5.13"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "time": "2020-07-08T17:02:28+00:00"
+        }
+    ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "beta",
+    "stability-flags": {
+        "anax/cache": 10,
+        "anax/configure": 10,
+        "anax/content": 10,
+        "anax/controller": 10,
+        "anax/log": 10,
+        "anax/page": 10,
+        "anax/url": 10
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": []
+    "platform": {
+        "php": "^7.2"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

@@ -3,7 +3,7 @@ REM server with Anax included
 
 [![Join the chat at https://gitter.im/canax/remserver-website](https://badges.gitter.im/canax/remserver-website.svg)](https://gitter.im/canax/remserver-website?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-This is a complete bundle of the Anax module REM server [canax/remserver](https://github.com/canax/remserver) together with an Anax website. It can be used to quickly start up a standalone REM server for test and development.
+This is a complete bundle of the Anax module REM server [anax/remserver](https://github.com/canax/remserver) together with an Anax website. It can be used to quickly start up a standalone REM server for test and development.
 
 The REM server provides a dummy REST API with dynamic content, useful for developing and testing REST applications.
 
@@ -73,7 +73,7 @@ Start a docker container that has Apache running. The file `docker-compose.yaml`
 docker-compose up remserver-dev
 ```
 
-Point your web browser to `http://localhost:10099/htdocs` and you should see the documentation.
+Point your web browser to `http://localhost:10098/` and you should see the documentation.
 
 
 
@@ -91,7 +91,7 @@ If you have downloaded this repo you can start it with `docker-compose` from the
 docker-compose up remserver
 ```
 
-Point your web browser to `http://localhost:10099` and you should see the documentation.
+Point your web browser to `http://localhost:10098` and you should see the documentation.
 
 The basic setup in `docker-compose.yml` is like this.
 
@@ -100,8 +100,29 @@ version: "3"
 services:
     remserver:
         image: anax/dev:remserver
-        ports: [ "10099:80" ]
+        ports: [ "10098:80" ]
 ```
+
+This means that the latest remserver is included in the image.
+
+
+
+#### Run local repo using docker (development)
+
+<!--
+
+```text
+version: "3"
+services:
+    remserver:
+        image: anax/dev:remserver
+        ports: [ "10098:80" ]
+
+    remserver-dev:
+        <<: *latest-apache
+        volumes: [ ".:/home/anax/repo" ]
+```
+-->
 
 
 
@@ -110,10 +131,10 @@ services:
 You can start it anywhere where you have access to `docker`. Run like this and map the container port 80 to the local host port 10099.
 
 ```
-docker run -p 10099:80 anax/dev:remserver
+docker run -p 10098:80 anax/dev:remserver
 ```
 
-Point your web browser to `http://localhost:10099` and you should see the documentation.
+Point your web browser to `http://localhost:10098` and you should see the documentation.
 
 
 
@@ -121,7 +142,7 @@ Point your web browser to `http://localhost:10099` and you should see the docume
 
 If you want the REM server as a Anax module to be installed together with your own Anax installation, then you should install the module itself.
 
-Read more on the module [canax/remserver](https://github.com/canax/remserver).
+Read more on the module [anax/remserver](https://github.com/canax/remserver).
 
 
 
@@ -180,5 +201,5 @@ make production-publish   # Publish latest to the production server.
 
 ```
  .  
-..:  Copyright (c) 2017-2018 Mikael Roos (mos@dbwebb.se)
+..:  Copyright (c) 2017-2020 Mikael Roos (mos@dbwebb.se)
 ```

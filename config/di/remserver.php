@@ -3,23 +3,24 @@
  * Configuration file for DI container.
  */
 return [
-
-    // Services to add to the container.
     "services" => [
-        "rem" => [
+        "remserver" => [
             "shared" => true,
             "callback" => function () {
                 $rem = new \Anax\RemServer\RemServer();
-                $rem->configure("remserver.php");
                 $rem->injectSession($this->get("session"));
-                return $rem;
-            }
-        ],
-        "remController" => [
-            "shared" => false,
-            "callback" => function () {
-                $rem = new \Anax\RemServer\RemServerController();
-                $rem->setDI($this);
+
+                // Load the configuration file
+                $cfg = $this->get("configuration");
+                $config = $cfg->load("remserver/config.php");
+                $configFile = $config["file"] ?? null;
+
+                $dataset = $config["config"]["dataset"] ?? null;
+                if (!$dataset) {
+                    throw new Exception("Configuration file '$configFile' is missing an entry 'dataset'.");
+                }
+
+                $rem->setDefaultDataset($dataset);
                 return $rem;
             }
         ],

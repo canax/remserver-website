@@ -2,3 +2,5 @@
 /build
 /vendor
 memory::
+composer.lock
+.phpunit.result.cache

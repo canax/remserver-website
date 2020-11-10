@@ -169,7 +169,7 @@ install: prepare install-production install-tools-php install-tools-bash
 
 # target: install-production      - Install tools needed for production
 .PHONY:  install-production
-install-production: 
+install-production:
 	@$(call HELPTEXT,$@)
 	[ ! -f composer.json ] || composer --no-dev install
 
@@ -276,7 +276,8 @@ install-tools-php:
 
 	curl -Lso $(PHPCBF) https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar && chmod 755 $(PHPCBF)
 
-	curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
+	# phpmd
+	curl -Lso $(PHPMD) https://github.com/phpmd/phpmd/releases/download/2.8.1/phpmd.phar && chmod 755 $(PHPMD)
 
 	curl -Lso $(PHPLOC) https://phar.phpunit.de/phploc.phar && chmod 755 $(PHPLOC)
 
@@ -350,7 +351,7 @@ phpmd: prepare
 .PHONY: phploc
 phploc: prepare
 	@$(call HELPTEXT,$@)
-	$(PHPLOC) src > build/phploc
+	[ ! -d src ] || $(PHPLOC) src > build/phploc
 
 
 

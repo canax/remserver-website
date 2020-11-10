@@ -3,6 +3,15 @@ Revision history
 
 
 
+v2.0.x (2020-11-09)
+---------------------------------
+
+* Upgrade to use latest version of anax/anax v2.0 and PHP 7.4.
+* Upgrade to latest version of anax/remserver
+* Update the docker-container to be used in development mode.
+
+
+
 v1.0.3 (2018-05-08)
 ---------------------------------
 

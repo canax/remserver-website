@@ -27,3 +27,9 @@ pre {
     padding: 0.5em;
     border-left: 2px solid #ccc;
 }
+
+.header-anchor {
+    color: #666;
+    float: right;
+    text-decoration: none;
+}
